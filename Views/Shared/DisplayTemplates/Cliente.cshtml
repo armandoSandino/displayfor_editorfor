@@ -1,0 +1,43 @@
+
+@model DisplayTemplatesEditorTemplates.Models.Cliente
+
+@{
+    var Image = "";
+    if(Model.Sexo == "Masculino"){
+        Image = "hombre.png";
+    }else{
+        Image = "mujer.png";
+    }
+}
+
+<div class="col-md-3 mb-2">
+<div class="card">
+
+<div class="card-header text-right p-1">
+<a asp-controller="Clientes" asp-action="Delete"
+asp-route-id="@Model.Id" class="m-0 btn btn-danger">X</a>
+</div>
+
+<div class="card-body pt-0">
+<img class="card-img-top img-fluid mb-0" src="/image/@Image" alt="Card image cap">
+<h5 class="card-title">@Model.Nombre</h5>
+<p class="card-text">
+<small>
+Sexo: @Model.Sexo
+<br/>
+Email: @Model.Email
+<br/>
+Telefono: 
+<br/>
+@Model.Telefono
+</small>
+</p>
+</div>
+
+<div class="card-footer text-muted text-right p-1">
+<a asp-controller="Clientes" asp-action="Index" asp-route-id="@Model.Id" class="btn btn-outline-info">Ver</a>
+<a asp-controller="Clientes" asp-action="Edit"  asp-route-id="@Model.Id" class="btn btn-outline-info">Editar</a>
+</div>
+
+</div>
+</div>

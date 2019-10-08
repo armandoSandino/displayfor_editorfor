@@ -1,0 +1,42 @@
+
+
+@model List<DisplayTemplatesEditorTemplates.Models.Cliente>
+<!--con esto le diremos a nuestra vista que reciba un modelo de datos-->
+
+@{
+    ViewData["Title"] = "Clientes";
+}
+
+<div class="row mt-2">
+@for(int i=0; i < Model.Count; i++)
+{
+@Html.DisplayFor(model => model[i] )
+
+<!--Html.EditorFor(model => model[i] )-->
+
+}
+</div>
+
+@section LateralIzquierdo{
+
+    <div class="mb-4 mt-2">
+    <text> Interfaz de @ViewData["Title"] </text>
+    
+    <div class="list-group">
+    <a asp-controller="Clientes" 
+    asp-action="Create"
+
+    style="text-align:center" 
+    class="list-group-item list-group-item-action    btn btn-lg btn-success btn-block"> Agregar </a>
+    </div>
+    
+    </div>
+}
+
+@section LateralDerecho {
+
+    <h5>Sorftweb LABs y Sarah Solutions</h5>
+    <p>Empresas Nicaragüense que fortalecen lazos en la innovación y desarrollo tecnológico a gran escala,
+    para aportar al crecimiento del país y la región.
+    </p>
+}

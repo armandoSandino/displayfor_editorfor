@@ -1,0 +1,15 @@
+﻿
+@model List<DisplayTemplatesEditorTemplates.Models.Cliente>
+
+@{
+    ViewData["Title"] = "EditorTemplates";
+}
+<h1>@ViewData["Title"]</h1>
+<p>Lista de datos con Html.EditorFor() </p>
+
+<div class="row mt-2">
+@for(int i=0; i < Model.Count; i++ )
+{
+@Html.EditorFor(model => model[i] );
+}
+</div>
